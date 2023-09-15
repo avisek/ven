@@ -3,6 +3,15 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://avisek.github.io/ven/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitejs/vite.git"
+  },
+  "description": "My framework and build tooling for the web",
+  "keywords": ["modern-ui-ux", "theming", "components", "react", "scss"],
+  "author": "Avisek Das <avisekdas555@gmail.com>",
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
