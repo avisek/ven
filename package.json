@@ -25,6 +25,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "postcss-ven": "github:avisek/postcss-ven#main",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
