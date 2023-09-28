@@ -1,0 +1,16 @@
+@use 'sass:map';
+
+// Recursive map merge with null-valued key-value pairs deletion
+@function override($map1, $map2) {
+  @each $key, $value in $map2 {
+    @if $value == null {
+      $map1: map.remove($map1, $key);
+    } @else {
+      @if type-of($value) == "map" and type-of(map.get($map1, $key)) == "map" {
+        $value: override(map.get($map1, $key), $value);
+      }
+      $map1: map.merge($map1, ($key: $value));
+    }
+  }
+  @return $map1;
+}

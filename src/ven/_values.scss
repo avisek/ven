@@ -1,0 +1,263 @@
+@use 'functions' as *;
+
+
+$themes: () !default;
+
+$themes: override((
+  
+  // Name of the theme
+  'light': (
+    
+    // Base color (or background color)
+    'base':     hsl(0deg 0% 100%),
+    
+    // Contrast color (or foreground color)
+    'contrast': hsl(214deg 35% 15%),
+    
+    // List of color stops defining a [base -> gray -> contrast] gradient.
+    //   'gray': (
+    //     0   <BaseColor>,
+    //     50  hsl(0deg 0% 25%),
+    //     100 hsl(0deg 0% 50%),
+    //     150 hsl(0deg 0% 75%),
+    //     200 <ContrastColor>,
+    //    ),
+    // Note: Base & contrast color stops are automatically appendend so no need
+    // to include them.
+    // A color stop is defined as follows
+    //   `<position> <color>` or `<color> <position>` or `<color>` or `<position>`
+    //   `100 #999` or `#999 100` or `#999` or `100`
+    // Missing values (color or position) will be interpolated automatically.
+    // If only one **color** is provided instead of a **list** of color stops,
+    //   'gray': hsl(214, 11%, 60%),
+    // then it will be interpreted as this
+    //   'gray': (100 hsl(214, 11%, 60%)),
+    'gray':     hsl(214, 11%, 60%),
+    
+    // List of colors defining a [base -> baseMax] gradient.
+    //   'baseMax': (
+    //     0   <BaseColor>,
+    //     100 hsl(0deg 0% 95%),
+    //     200 hsl(0deg 0% 100%),
+    //    ),
+    // Note: Base color stop is automatically appendend so no need to include
+    // them.
+    'baseMax':  #fff,
+    
+    // List of colors defining a [contrast -> contrastMax] gradient.
+    //   'contrastMax': (
+    //     0   <ContrastColor>,
+    //     100 hsl(0deg 0% 5%),
+    //     200 hsl(0deg 0% 0%),
+    //    ),
+    // Note: Contrast color stop is automatically appendend so no need to
+    // include them.
+    'contrastMax':  #000,
+    
+    // List of color stops defining a [base -> color -> contrast] gradient.
+    //   'primary': (
+    //     0   <BaseColor>,
+    //     50  hsl(214deg 100% 24%),
+    //     100 hsl(214deg 100% 48%),
+    //     150 hsl(214deg 100% 72%),
+    //     200 <ContrastColor>,
+    //    ),
+    // Note: Base & contrast color stops are automatically appendend so no need
+    // to include them.
+    // Definations can also be referenced as follows
+    //   'primary': 'blue',
+    //   'blue':    #0d6efd
+    'neutral':  'gray',
+    'primary':  hsl(214deg 100% 48%),
+    'success':  'green',
+    'warning':  hsl(45deg 100% 51%),
+    'danger':   'red',
+    
+    'blue':     hsl(214deg 100% 48%)/*#0d6efd*/,
+    'indigo':   #6610f2,
+    'purple':   #6f42c1,
+    'pink':     #d63384,
+    'red':      #dc3545,
+    'orange':   #fd7e14,
+    'yellow':   #ffc107,
+    'green':    #198754,
+    'teal':     #20c997,
+    'cyan':     #0dcaf0,
+    
+    'interpolationMode': 'lab'
+  ),
+  
+  'dark': (
+    'base':     hsl(214deg 35% 21%),
+    'contrast': hsl(214deg 100% 98%),
+    'gray':     hsl(210, 11%, 71%),
+    
+    'primary':  hsl(214, 90%, 77%),
+    'success':  'green',
+    'warning':  hsl(45deg 100% 51%),
+    'danger':   'red',
+    
+    'blue':     #0d6efd,
+    'indigo':   #6610f2,
+    'purple':   #6f42c1,
+    'pink':     #d63384,
+    'red':      #dc3545,
+    'orange':   #fd7e14,
+    'yellow':   #ffc107,
+    'green':    #198754,
+    'teal':     #20c997,
+    'cyan':     #0dcaf0,
+    
+    'interpolationMode': 'lab'
+  ),
+), $themes);
+
+$theme-default: 'light' !default;
+$theme-colorStops: 10, 20, 40, 60, 80, 100, 120, 140, 160, 180 !default;
+
+
+$fontFamilies: () !default;
+
+$fontFamilies: override((
+  'sansSerif': (system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'),
+  'monospace': (SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace),
+  
+  'heading':   var(--fontFamily-sansSerif),
+  'body':      var(--fontFamily-sansSerif),
+  'code':      var(--fontFamily-monospace),
+), $fontFamilies);
+
+
+$fontSizes: () !default;
+
+$fontSizes: override((
+  'xxs':  0.75rem,
+  'xs':   0.8125rem,
+  's':    0.875rem,
+  'm':    1rem,
+  'l':    1.125rem,
+  'xl':   1.375rem,
+  'xxl':  1.75rem,
+  'xxxl': 2.5rem,
+), $fontSizes);
+
+
+$fontWeights: () !default;
+
+$fontWeights: override((
+  'light':    300,
+  'regular':  400,
+  'medium':   500,
+  'semibold': 600,
+  'bold':     700,
+), $fontWeights);
+
+
+$lineHeights: () !default;
+
+$lineHeights: override((
+  'xs': 1.25,
+  's':  1.375,
+  'm':  1.625,
+), $lineHeights);
+
+
+$sizes: () !default;
+
+$sizes: override((
+  'xs': 1.625rem,
+  's':  1.875rem,
+  'm':  2.25rem,
+  'l':  2.75rem,
+  'xl': 3.5rem,
+), $sizes);
+
+
+$spaces: () !default;
+
+$spaces: override((
+  'xs': 0.25rem,
+  's':  0.5rem,
+  'm':  1rem,
+  'l':  1.5rem,
+  'xl': 2.5rem,
+), $spaces);
+
+
+$borderRadiuses: () !default;
+
+$borderRadiuses: override((
+  's':  0.25rem,
+  'm':  0.25rem,
+  'l':  0.5rem,
+), $borderRadiuses);
+
+
+$boxShadows: () !default;
+
+$boxShadows: override((
+  'xs': (
+    0 1px 4px -1px var(--color-contrast-50A),
+  ),
+  's':  (
+    0 2px 4px -1px var(--color-contrast-20A),
+    0 3px 12px -1px var(--color-contrast-30A),
+  ),
+  'm':  (
+    0 2px 6px -1px var(--color-contrast-20A),
+    0 8px 24px -4px var(--color-contrast-40A),
+  ),
+  'l':  (
+    0 3px 18px -2px var(--color-contrast-20A),
+    0 12px 48px -6px var(--color-contrast-40A),
+  ),
+  'xl': (
+    0 4px 24px -3px var(--color-contrast-20A),
+    0 18px 64px -8px var(--color-contrast-40A),
+  ),
+), $boxShadows);
+
+
+
+// This rule will be picked up by the postcss plugin
+:ven {
+  --themes: #{inspect($themes)};
+  --theme-default: #{inspect($theme-default)};
+  --theme-colorStops: #{inspect($theme-colorStops)};
+}
+
+:root {
+
+  @each $key, $val in $fontFamilies {
+    --fontFamily-#{$key}: #{inspect($val)};
+  }
+
+  @each $key, $val in $fontSizes {
+    --fontSize-#{$key}: #{$val};
+  }
+
+  @each $key, $val in $fontWeights {
+    --fontWeight-#{$key}: #{$val};
+  }
+
+  @each $key, $val in $lineHeights {
+    --lineHeight-#{$key}: #{$val};
+  }
+
+  @each $key, $val in $sizes {
+    --size-#{$key}: #{$val};
+  }
+
+  @each $key, $val in $spaces {
+    --space-#{$key}: #{$val};
+  }
+
+  @each $key, $val in $borderRadiuses {
+    --borderRadius-#{$key}: #{$val};
+  }
+
+  @each $key, $val in $boxShadows {
+    --boxShadow-#{$key}: #{$val};
+  }
+
+}

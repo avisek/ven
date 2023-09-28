@@ -1,5 +1,7 @@
 export default {
   plugins: {
-    'postcss-ven': {},
+    'ven': {
+      srcDir: './src',
+    },
   }
 }

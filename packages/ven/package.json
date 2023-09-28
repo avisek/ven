@@ -1,0 +1,25 @@
+{
+  "name": "ven",
+  "version": "0.0.0",
+  "homepage": "https://avisek.github.io/ven/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avisek/ven.git",
+    "directory": "packages/ven"
+  },
+  "description": "PostCSS plugin for generating dynamic CSS variables used in Ven framework",
+  "keywords": [
+    "modern-ui-ux",
+    "theming",
+    "components",
+    "react",
+    "scss",
+    "postcss"
+  ],
+  "author": "Avisek Das <avisekdas555@gmail.com>",
+  "license": "MIT",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
