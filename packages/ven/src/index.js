@@ -1,11 +1,11 @@
-const path = require('node:path')
-const { gatherUsedVariables } = require('./gatherUsedVariables')
-const { generateRules } = require('./generateRules')
+import path from 'node:path'
+import { gatherUsedVariables } from './gatherUsedVariables.js'
+import { generateRules } from './generateRules.js'
 
 /**
  * @type {import('postcss').PluginCreator}
  */
-module.exports = function ven({
+function ven({
   srcDir = './src',
   srcExts = ['css', 'scss'],
 } = {}) {
@@ -47,4 +47,6 @@ module.exports = function ven({
   }
 }
 
-module.exports.postcss = true
+ven.postcss = true
+
+export default ven

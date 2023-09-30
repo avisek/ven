@@ -1,5 +1,5 @@
-const fs = require("node:fs")
-const path = require("node:path")
+import fs from "node:fs"
+import path from "node:path"
 
 function findFiles(dir, exts, callback) {
   const files = []
@@ -18,7 +18,7 @@ function findFiles(dir, exts, callback) {
   return files
 }
 
-function gatherUsedVariables(srcDir, srcExts) {
+export function gatherUsedVariables(srcDir, srcExts) {
   const usedVariables = []
   findFiles(srcDir, srcExts, filename => {
     const text = fs.readFileSync(filename, 'utf8')
@@ -28,5 +28,3 @@ function gatherUsedVariables(srcDir, srcExts) {
   })
   return usedVariables
 }
-
-module.exports = { gatherUsedVariables }

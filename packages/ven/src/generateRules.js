@@ -1,4 +1,4 @@
-function generateRules(params, usedVariables) {
+export function generateRules(params, usedVariables) {
   
   console.log(params)
   // console.log(usedVariables)
@@ -25,5 +25,3 @@ function generateRules(params, usedVariables) {
     },
   ]
 }
-
-module.exports = { generateRules }

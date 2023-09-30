@@ -1,7 +1,11 @@
+import ven from 'ven'
+
+const venConfig = {
+  srcDir: './src',
+}
+
 export default {
-  plugins: {
-    'ven': {
-      srcDir: './src',
-    },
-  }
+  plugins: [
+    ven(venConfig),
+  ],
 }
