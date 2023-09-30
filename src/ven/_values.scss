@@ -11,47 +11,64 @@ $themes: override((
     // Base color (or background color)
     'base':     hsl(0deg 0% 100%),
     
-    // Contrast color (or foreground color)
+    // Contrast color (or foreground color or text color)
     'contrast': hsl(214deg 35% 15%),
     
     // List of color stops defining a [base -> gray -> contrast] gradient.
     //   'gray': (
-    //     0   <BaseColor>,
-    //     50  hsl(0deg 0% 25%),
-    //     100 hsl(0deg 0% 50%),
-    //     150 hsl(0deg 0% 75%),
-    //     200 <ContrastColor>,
+    //     0   <BaseColor>,      // Automatically appended. No need to write
+    //     50  hsl(0deg 0% 25%), // Define intermediate tints/shades
+    //     100 hsl(0deg 0% 50%), // Define intermediate tints/shades
+    //     150 hsl(0deg 0% 75%), // Define intermediate tints/shades
+    //     200 <ContrastColor>,  // Automatically appended. No need to write
     //    ),
     // Note: Base & contrast color stops are automatically appendend so no need
     // to include them.
     // A color stop is defined as follows
-    //   `<position> <color>` or `<color> <position>` or `<color>` or `<position>`
+    //   `<pos> <col>` or `<col> <pos>` or `<col>` or `<pos>`
+    // Where
+    //   <pos> is the position of the color stop. It ranges from
+    //     0 (meaning the <BaseColor>) to
+    //     100 (meaning the <KeyColor> or the actual color of the gradient) to
+    //     200 (meaning the <ContrastColor>)
+    //   <col> is the color of the color stop. It accepts any css color and
+    //   the custom ones e.g. `lch(40, 106, 300)`
+    // E.g.
     //   `100 #999` or `#999 100` or `#999` or `100`
-    // Missing values (color or position) will be interpolated automatically.
+    // Missing values (<col> or <pos>) will be interpolated automatically.
     // If only one **color** is provided instead of a **list** of color stops,
     //   'gray': hsl(214, 11%, 60%),
-    // then it will be interpreted as this
+    // then it will be interpreted like this
     //   'gray': (100 hsl(214, 11%, 60%)),
     'gray':     hsl(214, 11%, 60%),
     
-    // List of colors defining a [base -> baseMax] gradient.
+    // List of color stops defining a [base -> baseMax] gradient.
+    // The significance of baseMax and contrastMax is to have some UI colors
+    // that are outside of the [base -> gray -> contrast] range.
+    // So, if the theme is light (BaseColor is light and ContrastColor is dark)
+    // then the baseMax color should be lighter than the base color
+    // and the contrastMax color should be darker than the contrast color
+    // And, if the theme is dark (BaseColor is dark and ContrastColor is light)
+    // then the baseMax color should be darker than the base color
+    // and the contrastMax color should be lighter than the contrast color
     //   'baseMax': (
-    //     0   <BaseColor>,
-    //     100 hsl(0deg 0% 95%),
-    //     200 hsl(0deg 0% 100%),
+    //     0   <BaseColor>,       // Automatically appended. No need to write
+    //     50  hsl(0deg 0% 95%),  // [Optional] Define intermediate tints/shades
+    //     100 hsl(0deg 0% 100%), // [Optional] This is the baseMax color
     //    ),
     // Note: Base color stop is automatically appendend so no need to include
-    // them.
+    // it.
+    //
     'baseMax':  #fff,
     
-    // List of colors defining a [contrast -> contrastMax] gradient.
+    // List of color stops defining a [contrast -> contrastMax] gradient.
     //   'contrastMax': (
     //     0   <ContrastColor>,
-    //     100 hsl(0deg 0% 5%),
-    //     200 hsl(0deg 0% 0%),
+    //     50  hsl(0deg 0% 5%),
+    //     100 hsl(0deg 0% 0%),
     //    ),
     // Note: Contrast color stop is automatically appendend so no need to
-    // include them.
+    // include it.
     'contrastMax':  #000,
     
     // List of color stops defining a [base -> color -> contrast] gradient.

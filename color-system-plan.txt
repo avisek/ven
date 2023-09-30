@@ -1,0 +1,34 @@
+base-00A | contrast-00A
+base-10A | contrast-10A | gray-020 | primary-020 | primary-20A | primary-accessible-20A | primary-020-contrast-60A | primary-020-base
+base-20A | contrast-20A | gray-040 | primary-040 | primary-40A | primary-accessible-40A | primary-040-contrast-60A | primary-040-base
+base-30A | contrast-30A | gray-060 | primary-060 | primary-60A | primary-accessible-60A | primary-060-contrast-60A | primary-060-base
+base-40A | contrast-40A | gray-080 | primary-080 | primary-80A | primary-accessible-80A | primary-080-contrast-60A | primary-080-base
+base-50A | contrast-50A | gray-100 | primary-100 |             | primary-accessible-100 | primary-100-contrast-60A | primary-100-base
+base-60A | contrast-60A | gray-120 | primary-120 |             | primary-accessible-120 | primary-120-contrast-60A | primary-120-base
+base-70A | contrast-70A | gray-140 | primary-140 |             | primary-accessible-140 | primary-140-contrast-60A | primary-140-base
+base-80A | contrast-80A | gray-160 | primary-160 |             | primary-accessible-160 | primary-160-contrast-60A | primary-160-base
+base-90A | contrast-90A | gray-180 | primary-180 |             | primary-accessible-180 | primary-180-contrast-60A | primary-180-base
+base-100 | contrast-100
+
+
+
+
+
+
+
+
+
+colorStops: 10 20 40 60 80 100 120 140 160 180
+
+pink-010
+
+pink-010-contrast-050
+
+pink-010-blue-050
+
+pink-010-blue-050-accessible-080
+
+
+accessible-080
+
+blue-100-accessible-080
